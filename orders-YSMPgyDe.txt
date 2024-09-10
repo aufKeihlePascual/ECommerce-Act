@@ -1,0 +1,13 @@
+Order Code: YSMPgyDe
+Date Ordered: 2024-09-10 14:00:41
+
+Order Items:
+Product ID: 5
+Product Name: 25Kg Rice
+Price: 1200 PHP
+
+Product ID: 4
+Product Name: 5Kg Sugar
+Price: 500 PHP
+
+Total Price: 1700 PHP

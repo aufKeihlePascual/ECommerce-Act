@@ -1,9 +1,8 @@
 <?php
+session_start();
 
-// Clear the cart
-$_SESSION["cart"] = [];
-// Redirect to the products browsing page
+$_SESSION['cart'] = [];
 
-/*header(“Location: cart.php”);*/
+header("Location: cart.php");
 
 ?>

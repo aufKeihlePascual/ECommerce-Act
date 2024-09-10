@@ -1,0 +1,13 @@
+Order Code: HFzlY34W
+Date Ordered: 2024-09-10 14:00:16
+
+Order Items:
+Product ID: 1
+Product Name: 1Kg Sugar
+Price: 100 PHP
+
+Product ID: 6
+Product Name: One Tray Eggs
+Price: 300 PHP
+
+Total Price: 400 PHP

@@ -1,14 +1,34 @@
 <?php
 session_start();
 require "products.php";
-// $order_code = ???;
 
+$order_code = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 8);
 
-// TODO: Save order data to orders-[ORDER_CODE].txt
-// Get the order from the cart (Session variable)
-// Map the order Ids from the $products variable
-// Compute the total
-// Write the orders in a file
+$order_date = date('Y-m-d H:i:s');
+
+$cart_items = $_SESSION['cart'];
+
+$total_price = 0;
+foreach ($cart_items as $item) {
+    $total_price += $item['price'];
+}
+
+$order_data = "Order Code: $order_code\n";
+$order_data .= "Date Ordered: $order_date\n\n";
+$order_data .= "Order Items:\n";
+
+foreach ($cart_items as $item) {
+    $order_data .= "Product ID: " . $item['id'] . "\n";
+    $order_data .= "Product Name: " . $item['name'] . "\n";
+    $order_data .= "Price: " . $item['price'] . " PHP\n";
+    $order_data .= "\n";
+}
+
+$order_data .= "Total Price: $total_price PHP\n";
+
+file_put_contents("orders-$order_code.txt", $order_data);
+
+$_SESSION['cart'] = [];
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +40,7 @@ require "products.php";
 <body>
     <h1>Order Confirmation</h1>
     <p>Thank you for your order!</p>
-    <!-- TODO: Display order summary -->
+    <p>Order Code: <?php echo $order_code; ?></p>
+    <p>Total Price: <?php echo $total_price; ?> PHP</p>
 </body>
 </html>
