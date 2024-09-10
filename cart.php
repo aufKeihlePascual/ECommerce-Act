@@ -24,6 +24,8 @@ require "products.php";
     </ul>
     
     <a href="reset-cart.php">Clear my cart</a>
+    <a href="index.php">Continue Shopping</a>
     <a href="place_order.php">Place the order</a>
+
 </body>
 </html>
